@@ -23,8 +23,9 @@ spec:
         name: longhorn-repo
       version: v1.8.1
   interval: 1m0s
-ingress:
-      app:
-        className: internal
-        hosts:
-          - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
+  values:
+    ingress:
+          app:
+            className: internal
+            hosts:
+              - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
