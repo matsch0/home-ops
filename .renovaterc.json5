@@ -116,6 +116,20 @@
       ignoreTests: true,
     },
     {
+      description: 'Auto-merge Helm chart minor/patch updates',
+      matchManagers: [
+        'helm'
+      ],
+      automerge: true,
+      automergeType: 'branch',
+      matchUpdateTypes: [
+        'minor', 
+        'patch', 
+        'digest'
+      ],
+      minimumReleaseAge: '3 days',
+    },
+    {
       matchUpdateTypes: [
         'major',
       ],
