@@ -3,14 +3,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app metrics-server
-  namespace: &namespace kube-system
+  name: &app vaultwarden
+  namespace: &namespace default
 spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
   interval: 1h
-  path: ./kubernetes/apps/kube-system/metrics-server/app
+  path: ./kubernetes/apps/default/vaultwarden/app
   postBuild:
     substituteFrom:
       - name: cluster-secrets
